@@ -1,4 +1,4 @@
-### spark-feature-data  ::: spark进行特征工程示例项目
+### spark-feature-data  ::: spark进行特征工程示例
 -----------------------------------
 ### spark-feature-project ::: spark特征工作需要的基础操作示例
 -----------------------------------
