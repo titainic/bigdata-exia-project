@@ -26,7 +26,7 @@ public class OneHotEncoderExample
       SparkSession spark = SparkSession
               .builder()
               .master("spark://titanic:7077")
-              .appName("JavaOneHotEncoderExample")
+              .appName("OneHotEncoderExample")
               .getOrCreate();
 
 
