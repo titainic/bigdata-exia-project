@@ -11,6 +11,7 @@
 
     <properties>
         <spark.version>3.0.0</spark.version>
+        <tablesaw.version>0.38.1</tablesaw.version>
     </properties>
 
     <dependencyManagement>
@@ -33,6 +34,19 @@
                 <artifactId>spark-mllib_2.12</artifactId>
                 <version>${spark.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>tech.tablesaw</groupId>
+                <artifactId>tablesaw-core</artifactId>
+                <version>${tablesaw.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>tech.tablesaw</groupId>
+                <artifactId>tablesaw-jsplot</artifactId>
+                <version>${tablesaw.version}</version>
+            </dependency>
+
 
             <dependency>
                 <groupId>yang-bin</groupId>
