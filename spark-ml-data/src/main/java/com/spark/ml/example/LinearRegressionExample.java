@@ -16,7 +16,7 @@ import static org.apache.spark.sql.functions.col;
  */
 public class LinearRegressionExample
 {
-//   public static String dataPath = LinearRegressionExample.class.getClassLoader().getResource("LinearRegression/lpsa.data").getFile();
+
     public static String SPARK_HOME = "spark://titanic:7077";
 
     public static void main(String[] args)
