@@ -6,7 +6,7 @@
 
   <parent>
     <groupId>yang-bin</groupId>
-    <artifactId>spark-feature-project</artifactId>
+    <artifactId>spark-exia-project</artifactId>
     <version>1.0-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
