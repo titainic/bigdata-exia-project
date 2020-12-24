@@ -55,6 +55,7 @@ public class TF_IDFSpark
         wordsData.show(10,false);
 
         int numFeatures = 20;
+
         HashingTF hashingTF = new HashingTF()
                 .setInputCol("words")
                 .setOutputCol("rawFeatures")
