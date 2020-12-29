@@ -20,6 +20,7 @@ import java.util.List;
 
 /**
  * https://blog.csdn.net/liulingyuan6/article/details/53381122
+ * https://dzone.com/articles/calculating-tf-idf-with-apache-spark
  *
  * https://time.geekbang.org/column/intro/74 推荐学习视频
  */
@@ -50,16 +51,17 @@ public class TF_IDFSpark
         Dataset<Row> sentenceData = spark.createDataFrame(data, schema);
         sentenceData.show(false);
 
+        //分词
         Tokenizer tokenizer = new Tokenizer().setInputCol("sentence").setOutputCol("words");
         Dataset<Row> wordsData = tokenizer.transform(sentenceData);
-        wordsData.show(10,false);
+        wordsData.show(false);
 
-        int numFeatures = 20;
 
         HashingTF hashingTF = new HashingTF()
+//                .setBinary(false)
                 .setInputCol("words")
                 .setOutputCol("rawFeatures")
-                .setNumFeatures(numFeatures);
+                .setNumFeatures(2000); //hash 桶数量 很重要参数
         Dataset<Row> featurizedData = hashingTF.transform(wordsData);
 
         featurizedData.show(false);
@@ -77,6 +79,10 @@ public class TF_IDFSpark
             System.out.println(features);
             System.out.println(label);
         }
+
+        Dataset<Row> resDS = rescaledData.select("sentence", "words", "features");
+
+        resDS.printSchema();
 
         spark.stop();
     }
