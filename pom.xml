@@ -80,6 +80,7 @@
         <module>spark-operation-data</module>
         <module>spark-statistics-data</module>
         <module>spark-ml-data</module>
+        <module>spark-nlp-data</module>
     </modules>
 
 </project>
