@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <spark.version>3.0.0</spark.version>
+        <spark.version>3.1.2</spark.version>
         <tablesaw.version>0.38.1</tablesaw.version>
     </properties>
 
