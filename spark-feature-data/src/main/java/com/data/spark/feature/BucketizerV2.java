@@ -17,6 +17,9 @@ import java.util.List;
 import static org.apache.spark.sql.functions.col;
 import static org.apache.spark.sql.functions.sum;
 
+/**
+ * 数据区间，统计
+ */
 public class BucketizerV2
 {
 
