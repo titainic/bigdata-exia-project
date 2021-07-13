@@ -1,4 +1,4 @@
-package com.spark.nlp.example;
+package com.spark.nlp.words;
 
 import org.apache.spark.ml.feature.CountVectorizer;
 import org.apache.spark.ml.feature.CountVectorizerModel;

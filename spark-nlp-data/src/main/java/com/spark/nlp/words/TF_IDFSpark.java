@@ -1,4 +1,4 @@
-package com.spark.nlp.example;
+package com.spark.nlp.words;
 
 
 import org.apache.spark.ml.feature.HashingTF;
