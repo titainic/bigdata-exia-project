@@ -1,6 +1,7 @@
 package com.data.spark.feature;
 
 import org.apache.spark.ml.feature.MinMaxScaler;
+import org.apache.spark.ml.feature.StandardScaler;
 import org.apache.spark.ml.feature.VectorAssembler;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
@@ -12,8 +13,9 @@ import static org.apache.spark.sql.functions.column;
 import static org.apache.spark.sql.functions.split;
 
 /**
- * 归一化
+ * 归一化,标准化
  * 将特征值缩放到一个指定的负数和正数之间
+ * https://blog.csdn.net/xuejianbest/article/details/85779029 参考
  */
 public class Normalize
 {
@@ -65,6 +67,7 @@ public class Normalize
         Dataset<Row> feautreDS = vectorDS.select("id", "feature");
         feautreDS.show(false);
 
+        //归一化
         MinMaxScaler minMaxScaler = new MinMaxScaler()
                 .setInputCol("feature")
                 .setOutputCol("scaled")
@@ -73,6 +76,15 @@ public class Normalize
 
         minMaxScaler.fit(feautreDS).transform(feautreDS).select("scaled").show(false);
 
+
+        //标准化
+        StandardScaler scaler = new StandardScaler()
+                .setInputCol("feature")
+                .setOutputCol("scaledFeatures")
+                .setWithStd(true)
+                .setWithMean(false);
+
+        scaler.fit(feautreDS).transform(feautreDS).select("scaledFeatures").show(false);
         spark.stop();
 
     }
