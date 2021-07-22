@@ -5,17 +5,41 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>yang-bin</groupId>
-    <artifactId>spark-exia-project</artifactId>
+    <artifactId>bigdata-exia-project</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <properties>
         <spark.version>3.1.2</spark.version>
         <tablesaw.version>0.38.1</tablesaw.version>
+        <flink.version>1.13.1</flink.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-connector-kafka_2.12</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-java</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-streaming-java_2.12</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-clients_2.11</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+
 
             <dependency>
                 <groupId>org.apache.spark</groupId>
@@ -81,6 +105,7 @@
         <module>spark-statistics-data</module>
         <module>spark-ml-data</module>
         <module>spark-nlp-data</module>
+        <module>flink-operation-data</module>
     </modules>
 
 </project>
