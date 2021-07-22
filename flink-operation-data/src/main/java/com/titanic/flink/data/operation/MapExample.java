@@ -18,7 +18,7 @@ public class MapExample
             @Override
             public Row map(String s) throws Exception
             {
-                String[] array = s.split("  ");
+                String[] array = s.split(" ");
 
                 return Row.of(array[0], array[1]);
             }

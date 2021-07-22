@@ -2,6 +2,6 @@ hello world
 hello flink
 hello spark
 hello scala
-how are you
-fine thank you
+how you
+fine you
 and you
