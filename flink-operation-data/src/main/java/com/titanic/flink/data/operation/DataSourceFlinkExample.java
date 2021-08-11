@@ -1,4 +1,4 @@
-package com.titanic.flink.data.sources;
+package com.titanic.flink.data.operation;
 
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
