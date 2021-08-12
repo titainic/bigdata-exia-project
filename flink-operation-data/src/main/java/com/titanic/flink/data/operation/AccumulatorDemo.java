@@ -12,6 +12,7 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
  */
 public class AccumulatorDemo
 {
+
     public static void main(String[] args) throws Exception
     {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.createRemoteEnvironment("titanic", 18081, "flink-example/target/flink-example-1.0-SNAPSHOT.jar");
