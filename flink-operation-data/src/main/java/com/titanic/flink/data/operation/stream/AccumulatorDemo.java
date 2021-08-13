@@ -1,4 +1,4 @@
-package com.titanic.flink.data.operation;
+package com.titanic.flink.data.operation.stream;
 
 import org.apache.flink.api.common.JobExecutionResult;
 import org.apache.flink.api.common.accumulators.IntCounter;
@@ -38,7 +38,7 @@ public class AccumulatorDemo
                 intCounter.add(1);
                 return s;
             }
-        }).setParallelism(1);
+        }).setParallelism(1);//如果并行度不是1，多个并行度。普通累加器求和结果不准确
 
         result.print();
 
